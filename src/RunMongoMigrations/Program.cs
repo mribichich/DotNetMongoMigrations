@@ -11,15 +11,15 @@ namespace RunMongoMigrations
     {
         public static void Main(string[] args)
         {
-////#if DEBUG
-////            args = new[]
-////               {
-////                    "--database",
-////                    "test1",
-////                    "--migrations",
-////                    @"..\..\..\MongoMigrations.Stubs\bin\Debug\MongoMigrations.Stubs.dll"
-////                };
-////#endif
+#if DEBUG
+            args = new[]
+               {
+                                "--database",
+                                "test1",
+                                "--migrations",
+                                @"..\..\..\MongoMigrations.Stubs\bin\Debug\MongoMigrations.Stubs.dll"
+                            };
+#endif
 
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(Run)
